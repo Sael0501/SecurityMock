@@ -1,0 +1,167 @@
+{
+  "uuid": "ddfe35a7-1635-4649-bbfd-4bb0fe099a3b",
+  "lastMigration": 22,
+  "name": "SecurityBusiness",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "9f48432c-9171-4243-99e9-551281bb8930",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "42cf4cfb-0bf3-40c7-98e6-fa4252bb9b83",
+          "body": "Hello nmms\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "da89cf61-1954-44e2-8145-5686f4b34e34",
+      "documentation": "First Response",
+      "method": "post",
+      "endpoint": "auth/realms/customer/protocol/openid-connect/token",
+      "responses": [
+        {
+          "uuid": "26e0587f-311d-4958-b6ad-8b34d26d0e09",
+          "body": "{\n  \"statusCode\" : 1200,\n  \"uafRequest\" : \"[{\\\"header\\\":{\\\"upv\\\":{\\\"major\\\":1,\\\"minor\\\":1},\\\"op\\\":\\\"Reg\\\",\\\"appID\\\":\\\"https://identity.bus-dev.sec.azure.backbaseservices.com/auth/realms/customer/protocol/fido-uaf/applications/business/facets\\\"},\\\"challenge\\\":\\\"QYAOiAULdARUExdypxTQCGCZtXVpL2nO5LiJ0QAAXaGZE3BPCKBm1AM9NIjeMTIhiEyQtRURraOvZ1lGbSasiQ\\\",\\\"username\\\":\\\"sec-bus-dev-jousa\\\",\\\"policy\\\":{\\\"accepted\\\":[[{\\\"aaid\\\":[\\\"BB1D#0001\\\",\\\"BB1D#FACE\\\",\\\"BB1D#0002\\\",\\\"BB1D#5A55\\\",\\\"BB1D#5A56\\\"]}]]}}]\",\n  \"op\" : \"Reg\",\n  \"lifetimeMillis\" : 300000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "ea4a5d8a-1eb5-437f-9f16-87e8b628c137",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "auth/realms/customer/protocol/fido-uaf/applications/business/facets",
+      "responses": [
+        {
+          "uuid": "439efc36-bd0d-4f26-98aa-797259de58c1",
+          "body": "{\n  \"trustedFacets\": [\n    {\n      \"version\": {\n        \"major\": 1,\n        \"minor\": 1\n      },\n      \"ids\": [\n        \"ios:bundle-id:com.sec.businessbankingapp.dev\",\n        \"android:apk-key-hash:wNMT6LWBHc-sJBG6TvFyZ-Yvfh4\",\n        \"android:apk-key-hash:HcYNP73svaovLMAW8Vti8OcPYS4\",\n        \"android:apk-key-hash:RM-_SpKcRk6eowuIq5LApJmMEsg\",\n        \"android:apk-key-hash:_nAabDdybkeixHmb2HXVt6_kf6c\",\n        \"android:apk-key-hash:wNMT6LWBHc-sJBG6TvFyZ-Yvfh4\",\n        \"android:apk-key-hash:saQSUb1IaSnspauvJwTVMkdvoJQ\"\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "a2c7e9d1-dd9f-4e77-86bd-613f38d7672c",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "auth/realms/customer/fido-uaf/users/sec-bus-dev-jousa/devices/4eb30806-1b26-42d5-86a1-7ee7e4047dd4/credentials/passcode_primary",
+      "responses": [
+        {
+          "uuid": "fe4548e2-418e-4d64-a21c-138cc9aa285d",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "37b1c6a3-4862-463d-81c3-a294028eef32",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "auth/realms/customer/protocol/fido-uaf/registration/response",
+      "responses": [
+        {
+          "uuid": "29b65270-5c33-4d99-82d7-5f85a4c58940",
+          "body": "{\n  \"statusCode\" : 1200\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
